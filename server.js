@@ -1,11 +1,22 @@
 const express = require("express");
+const routes = require("./routes/index");
+const sequelize = require("./config/connection");
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+// turn on routes
+app.use(routes);
+
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
+
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`App listening at http://localhost:${PORT}`);
+  });
 });
