@@ -15,7 +15,7 @@ app.use(routes);
 //   res.send("Hello World!");
 // });
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => {
     console.log(`App listening at http://localhost:${PORT}`);
   });
