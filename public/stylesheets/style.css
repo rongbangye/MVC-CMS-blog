@@ -37,6 +37,10 @@ button:hover {
   background-color: #3486eb;
 }
 
+#dashboard {
+  margin-right: 18px;
+}
+
 .post-list {
   margin: 0;
   padding: 0;
@@ -127,7 +131,7 @@ main {
 
 .post .title span {
   font-style: italic;
-  font-size: 90%;
+  font-size: 70%;
   color: #7d7d7d;
 }
 

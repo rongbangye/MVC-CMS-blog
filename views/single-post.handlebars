@@ -1,11 +1,16 @@
 <article class="post">
     <div class="title">
-        <span>({{post.title}})</span>
-    </div>
-    <div class="meta">
-        <a href="/post/{{post.id}}">{{post.comment_text}}</a>
-    </div>
-
+        <h2>
+            {{post.title}} 
+            <span> (Posted by {{post.user.username}} on
+                {{moment post.created_at "dddd, DD MMMM YYYY HH:mm:ss"}})
+            </span>
+        </h2>
+        </div>
+            <div class="meta">
+                {{post.content}}
+            </div>
+           
     <form class="comment-form">
         <div>
             <textarea name="comment-body"></textarea>

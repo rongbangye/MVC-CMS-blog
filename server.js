@@ -6,6 +6,9 @@ const hbs = exphbs.create({});
 const path = require("path");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
