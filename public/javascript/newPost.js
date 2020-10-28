@@ -9,12 +9,17 @@ async function newPostHandler(event) {
     .querySelector('textarea[name="newPost-content"]')
     .value.trim();
 
+  const post_id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+
   if (title) {
     const response = await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({
         title,
         content,
+        post_id,
       }),
       headers: {
         "Content-Type": "application/json",

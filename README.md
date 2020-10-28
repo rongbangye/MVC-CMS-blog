@@ -25,7 +25,7 @@ _Builded a CMS-style blog site similar to a Wordpress site, where developers can
 - Add a .env file to the root of the app with the following details
 
 ```text
-DB_NAME='ecommerce_db'
+DB_NAME='blog_site_db'
 DB_USER='root'
 DB_PW='xxx'
 ```
