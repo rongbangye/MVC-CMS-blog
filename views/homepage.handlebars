@@ -1,3 +1,4 @@
+<h2>Welcome {{user.username}}</h2>
 <ol class="post-list">
     {{#each posts as |post|}}
         <li>
@@ -8,6 +9,7 @@
                         <span> (Posted by {{post.user.username}} on
                             {{moment post.created_at "dddd, DD MMMM YYYY HH:mm:ss"}})
                     </span>
+                    <a href="/edit/{{post.id}}">Edit</a>
                     </h2>
                     
                 </div>
